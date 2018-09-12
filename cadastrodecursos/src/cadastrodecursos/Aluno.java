@@ -21,9 +21,6 @@ public class Aluno {
         this.mat = mat;
     }
      
-    public void cursoCodigo(int cursoCodigo) {
-        this.cursoCodigo = cursoCodigo;
-    }
     
     public void nome(String nome) {
         this.nome = nome;

@@ -45,8 +45,11 @@ public class Cadastrodecursos {
 
             if (opcao.equals("1")) {
                 System.out.println(" Cadastrar :");
-                System.out.println("Informe o id do cliente : ");
+                System.out.println("Informe a matrícula do aluno: ");
                 al.mat(entrada.nextInt());
+                entrada.nextLine();
+                System.out.println("informe o código do curso");
+                cr.cursoCodigo(entrada.nextInt());
                 entrada.nextLine();
                 System.out.println("Informe o nome : ");
                 al.nome(entrada.nextLine());
@@ -59,7 +62,77 @@ public class Cadastrodecursos {
 
                 ac.cadastrar(conn, al);
 
+            } else if (opcao.equals("2")) {
+                System.out.println(" Alterar :");
+                System.out.println("Informe Informe a matrícula do aluno: ");
+                al.mat(entrada.nextInt());
+                entrada.nextLine();
+                System.out.println("Informe o nome : ");
+                al.nome(entrada.nextLine());
+                System.out.println("Informe a cidade : ");
+                al.cidade(entrada.nextLine());
+                System.out.println("Informe o estado : ");
+                al.estado(entrada.nextLine());
+                entrada.nextLine();
+                                      
+                ac.alterar(conn, al);
+                
+            } else if (opcao.equals("3")) {
+                System.out.println(" Consultar :");
+                System.out.println("Informe Informe a matrícula do aluno: ");
+                al.mat(entrada.nextInt());
+                entrada.nextLine();
+                ac.consultar(conn, al);
             }
-        }       
+        }else if (opcao1.equals("2")) {
+            System.out.println("---------------------------------- CURSO --------------------------------------");
+            System.out.print("Selecione :"
+                    + "\n 1 - Inserir"
+                    + "\n 2 - Alterar \n"
+                    + " 3 - Consultar \n");
+            System.out.println("Digite = ");
+            opcao = entrada.nextLine();
+
+            if (opcao.equals("1")) {
+                System.out.println(" Inserir curso :");
+                System.out.println("Informe o curso : ");
+                cr.cursoCodigo(entrada.nextInt());
+                entrada.nextLine();
+                System.out.println("Informe a descriçao : ");
+                cr.Descricao(entrada.nextLine());
+                System.out.println("Informe o valor : ");
+                cr.valor(entrada.nextFloat());
+                System.out.println("Informe o numero de parcelas: ");
+                cr.numParcelas(entrada.nextInt());
+                entrada.nextLine();
+                
+                cc.cadastrar(conn, cr);
+                
+            } else if (opcao.equals("2")) {
+                System.out.println(" Alterar curso :");
+                System.out.println("Informe o curso : ");
+                cr.cursoCodigo(entrada.nextInt());
+                entrada.nextLine();
+                System.out.println("Informe a descriçao : ");
+                cr.Descricao(entrada.nextLine());
+                System.out.println("Informe o valor : ");
+                cr.valor(entrada.nextFloat());
+                System.out.println("Informe o numero de parcelas: ");
+                cr.numParcelas(entrada.nextInt());
+                entrada.nextLine();
+                
+                cc.alterar(conn, cr);
+
+            } else if (opcao.equals("3")) {
+                System.out.println(" Consultar :");
+                System.out.println("Digite o id do curso: ");
+                cr.cursoCodigo(entrada.nextInt());
+                entrada.nextLine();
+
+                cc.consultar(conn, cr);
+            }
+        }
+   
+   
     }
 }
