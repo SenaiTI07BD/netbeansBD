@@ -39,4 +39,6 @@ public class Curso {
     public int numParcelas(){
         return numParcelas;
     }
+
+    
 }
