@@ -1,0 +1,72 @@
+use senai;
+
+Create table Curso(
+CurCodigo int not null,
+primary key(CurCodigo),
+Descricao varchar(100) not null,
+Valor int not null,
+NumParcelas int not null);
+
+Create table Aluno(
+mat int not null,
+CurCodigo int not null,
+primary key(Mat),
+Nome varchar(100) not null,
+Cidade varchar(100) not null,
+Estado varchar(100) not null,
+foreign key(CurCodigo) references Curso(CurCodigo));
+
+Create table Mensalidade(
+NumParcela int not null,
+Mat int not null,
+CurCodigo int not null,
+foreign key(Mat) references Aluno(Mat),
+foreign key(CurCodigo) references Curso(CurCodigo),
+primary key(NumParcela),
+Valor float not null,
+DataDeVencimento datetime,
+DataDePagamento datetime);
+
+drop table Curso;
+drop table Aluno;
+drop table Mensalidade;
+
+-- PESQUISAR
+
+select * from Curso;
+select * from Aluno;
+select * from Mensalidade;
+
+-- INSERIR
+
+INSERT INTO Curso VALUES (1,'Portugues',1000,10);
+INSERT INTO Curso VALUES (2,'Matematica',900,11);
+INSERT INTO Curso VALUES (3,'Biologia',800,12);
+
+INSERT INTO Aluno VALUES(1001,3,'Merlinda','Sao Paulo','SP');
+INSERT INTO Aluno VALUES(2002,1,'Josevaldo','Rio de Janeiro','RJ');
+INSERT INTO Aluno VALUES(3003,2,'Carol','Curitiba','PR');
+
+INSERT INTO Mensalidade VALUES(12,1001,3,800,now(),null);
+INSERT INTO Mensalidade VALUES(10,2002,1,1000,now(),null);
+INSERT INTO Mensalidade VALUES(11,3003,2,900,now(),null);
+
+-- ALTERAR
+
+update Curso set NumParcelas = '5' where CurCodigo = 1;
+update Aluno set Cidade = 'Pitamonhangaba' where Mat = 1001;
+update Mensalidade set Valor = '500' where NumParcela = 10;
+
+-- DELETAR
+
+delete from Curso where CurCodigo = 3;
+delete from Aluno where Mat = 3003;
+delete from Mensalidade where NumParcela = 12;
+
+
+
+
+
+
+
+https://www.youtube.com/channel/UC_8SElusYdENzVw1Fsk0Nbg/videos
