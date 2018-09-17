@@ -133,6 +133,55 @@ public class Cadastrodecursos {
 
                 cc.consultar(conn, cr);
             }
+        }else if (opcao1.equals("3")) {
+            System.out.println("---------------------------------- MENSALIDADE --------------------------------------");
+            System.out.print("Selecione :"
+                    + "\n 1 - Inserir"
+                    + "\n 2 - Alterar \n"
+                    + " 3 - Consultar \n");
+            System.out.println("Digite = ");
+            opcao = entrada.nextLine();
+
+            if (opcao.equals("1")) {
+                System.out.println(" Inserir mensalidade :");
+                System.out.println("Informe a mensalidade : ");
+                cr.cursoCodigo(entrada.nextInt());
+                entrada.nextLine();
+                System.out.println("Informe a descriçao : ");
+                cr.Descricao(entrada.nextLine());
+                System.out.println("Informe o valor : ");
+                cr.valor(entrada.nextFloat());
+                entrada.nextLine();
+                System.out.println("Informe o numero de parcelas: ");
+                cr.numParcelas(entrada.nextInt());
+                entrada.nextLine();
+                
+                cc.cadastrar(conn, cr);
+                
+            } else if (opcao.equals("2")) {
+                System.out.println(" Alterar a mensalidade :");
+                System.out.println("Informe a mensalidade : ");
+                cr.cursoCodigo(entrada.nextInt());
+                entrada.nextLine();
+                System.out.println("Informe a descriçao : ");
+                cr.Descricao(entrada.nextLine());
+                System.out.println("Informe o valor : ");
+                cr.valor(entrada.nextFloat());
+                entrada.nextLine();
+                System.out.println("Informe o numero de parcelas: ");
+                cr.numParcelas(entrada.nextInt());
+                entrada.nextLine();
+                
+                cc.alterar(conn, cr);
+
+            } else if (opcao.equals("3")) {
+                System.out.println(" Consultar :");
+                System.out.println("Digite o id da mensalidade: ");
+                cr.cursoCodigo(entrada.nextInt());
+                entrada.nextLine();
+
+                cc.consultar(conn, cr);
+            }
         }
    
    
