@@ -49,19 +49,19 @@ public class Mensalidade {
     private String dataPagamento;
 
     int numParcelas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return numParcelas;
     }
 
     float valor() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return valor;
     }
 
     String dataVencimento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dataVencimento;
     }
 
     String dataPagamento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dataPagamento;
     }
 
 }
