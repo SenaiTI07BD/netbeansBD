@@ -49,7 +49,7 @@ public class Cadastrodecursos {
                 al.mat(entrada.nextInt());
                 entrada.nextLine();
                 System.out.println("informe o código do curso");
-                cr.cursoCodigo(entrada.nextInt());
+                al.cursoCodigo(entrada.nextInt());
                 entrada.nextLine();
                 System.out.println("Informe o nome : ");
                 al.nome(entrada.nextLine());

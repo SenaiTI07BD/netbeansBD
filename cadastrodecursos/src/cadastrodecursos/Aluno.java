@@ -34,6 +34,10 @@ public class Aluno {
         this.estado = estado;
     }
     
+    void cursoCodigo(int cursoCodigo) {
+        this.cursoCodigo = cursoCodigo;
+    }
+    
     public int mat() {
         return mat;
     }
@@ -53,4 +57,8 @@ public class Aluno {
     public String estado() {
         return estado;
     }
+
+    
+
+    
 }
