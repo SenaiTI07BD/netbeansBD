@@ -6,6 +6,8 @@ public class Curso {
     private String Descricao;
     private float valor;
     private int numParcelas;
+    private String dataVencimento;
+    private String dataPagamento;
     
      public void cursoCodigo(int cursoCodigo) {
         this.cursoCodigo = cursoCodigo;
@@ -38,6 +40,15 @@ public class Curso {
     
     public int numParcelas(){
         return numParcelas;
+    }
+
+
+    String dataVencimento(String nextLine) {
+       return dataVencimento;
+    }
+
+    String dataPagamento(String nextLine) {
+        return dataPagamento;
     }
 
     

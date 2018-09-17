@@ -143,41 +143,67 @@ public class Cadastrodecursos {
             opcao = entrada.nextLine();
 
             if (opcao.equals("1")) {
-                System.out.println(" Inserir mensalidade :");
-                System.out.println("Informe a mensalidade : ");
+                System.out.println(" Inserir mensalidade : ");
+                
+                System.out.println("Informe a matrícula : ");
                 cr.cursoCodigo(entrada.nextInt());
                 entrada.nextLine();
-                System.out.println("Informe a descriçao : ");
-                cr.Descricao(entrada.nextLine());
+                
+                System.out.println("Informe o código do curso: ");
+                cr.cursoCodigo(entrada.nextInt());
+                entrada.nextLine();
+                
+                System.out.println("Informe o número de parcelas: ");
+                cr.numParcelas(entrada.nextInt());
+                entrada.nextLine();
+                
                 System.out.println("Informe o valor : ");
                 cr.valor(entrada.nextFloat());
                 entrada.nextLine();
-                System.out.println("Informe o numero de parcelas: ");
-                cr.numParcelas(entrada.nextInt());
-                entrada.nextLine();
+                
+                System.out.println("Informe a Data de Vencimento : ");
+                cr.dataVencimento(entrada.nextLine());
+                
+                System.out.println("Informe a Data de Pagamento : ");
+                cr.dataPagamento(entrada.nextLine());
+                
+                
+                
+                
                 
                 cc.cadastrar(conn, cr);
                 
             } else if (opcao.equals("2")) {
-                System.out.println(" Alterar a mensalidade :");
-                System.out.println("Informe a mensalidade : ");
+                System.out.println(" Inserir mensalidade : ");
+                
+                System.out.println("Informe a matrícula : ");
                 cr.cursoCodigo(entrada.nextInt());
                 entrada.nextLine();
-                System.out.println("Informe a descriçao : ");
-                cr.Descricao(entrada.nextLine());
+                
+                System.out.println("Informe o código do curso: ");
+                cr.cursoCodigo(entrada.nextInt());
+                entrada.nextLine();
+                
+                System.out.println("Informe o número de parcelas: ");
+                cr.numParcelas(entrada.nextInt());
+                entrada.nextLine();
+                
                 System.out.println("Informe o valor : ");
                 cr.valor(entrada.nextFloat());
                 entrada.nextLine();
-                System.out.println("Informe o numero de parcelas: ");
-                cr.numParcelas(entrada.nextInt());
-                entrada.nextLine();
+                
+                System.out.println("Alterar a Data de Vencimento : ");
+                cr.dataVencimento(entrada.nextLine());
+                
+                System.out.println("Alterar a Data de Pagamento : ");
+                cr.dataPagamento(entrada.nextLine());
                 
                 cc.alterar(conn, cr);
 
             } else if (opcao.equals("3")) {
                 System.out.println(" Consultar :");
                 System.out.println("Digite o id da mensalidade: ");
-                cr.cursoCodigo(entrada.nextInt());
+                cr.numParcelas(entrada.nextInt());
                 entrada.nextLine();
 
                 cc.consultar(conn, cr);
