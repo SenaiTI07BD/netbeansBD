@@ -97,10 +97,12 @@ public class Cadastrodecursos {
                 System.out.println(" Inserir curso :");
                 System.out.println("Informe o curso : ");
                 cr.cursoCodigo(entrada.nextInt());
+                entrada.nextLine();
                 System.out.println("Informe a descriçao : ");
                 cr.Descricao(entrada.nextLine());
                 System.out.println("Informe o valor : ");
                 cr.valor(entrada.nextFloat());
+                entrada.nextLine();
                 System.out.println("Informe o numero de parcelas: ");
                 cr.numParcelas(entrada.nextInt());
                 entrada.nextLine();
@@ -116,6 +118,7 @@ public class Cadastrodecursos {
                 cr.Descricao(entrada.nextLine());
                 System.out.println("Informe o valor : ");
                 cr.valor(entrada.nextFloat());
+                entrada.nextLine();
                 System.out.println("Informe o numero de parcelas: ");
                 cr.numParcelas(entrada.nextInt());
                 entrada.nextLine();
