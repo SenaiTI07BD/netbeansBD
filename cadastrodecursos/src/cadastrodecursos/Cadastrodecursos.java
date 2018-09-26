@@ -14,8 +14,8 @@ import java.util.Scanner;
 public class Cadastrodecursos {
 
     /**
-     * @param args the command line arguments
-     */
+     * TEM Q FAZER O MENU DA MENSALIDADE AQ, JA FIZ O RESTO, SO FALTA ISSO, OLHA NO HISTORY DO GITHUB DESKTOP
+    */
     public static void main(String[] args) {
        Scanner entrada = new Scanner(System.in);
         String opcao;
