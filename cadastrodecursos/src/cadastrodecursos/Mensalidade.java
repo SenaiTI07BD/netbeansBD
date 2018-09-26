@@ -5,11 +5,20 @@
  */
 package cadastrodecursos;
 
+import java.sql.Date;
+
 /**
  *
  * @author senai
  */
 public class Mensalidade {
+    
+    private int numParcelas;
+    private float valor;
+    private Date dataVencimento;
+    private Date dataPagamento;
+    private int idMat;
+    private int CurCodigo;
     
     public int getNumParcelas() {
         return numParcelas;
@@ -27,26 +36,38 @@ public class Mensalidade {
         this.valor = valor;
     }
 
-    public String getDataVencimento() {
+    public Date getDataVencimento() {
         return dataVencimento;
     }
 
-    public void setDataVencimento(String dataVencimento) {
+    public void setDataVencimento(Date dataVencimento) {
         this.dataVencimento = dataVencimento;
     }
 
-    public String getDataPagamento() {
+    public Date getDataPagamento() {
         return dataPagamento;
     }
 
-    public void setDataPagamento(String dataPagamento) {
+    public void setDataPagamento(Date dataPagamento) {
         this.dataPagamento = dataPagamento;
     }
     
-    private int numParcelas;
-    private float valor;
-    private String dataVencimento;
-    private String dataPagamento;
+    public int getIdMat() {
+        return idMat;
+    }
+
+    public void setIdMat(int idMat) {
+        this.idMat = idMat;
+    }
+
+    public int getCurCodigo() {
+        return CurCodigo;
+    }
+
+    public void setCurCodigo(int CurCodigo) {
+        this.CurCodigo = CurCodigo;
+    }
+    
 
     int numParcelas() {
         return numParcelas;
@@ -56,11 +77,11 @@ public class Mensalidade {
         return valor;
     }
 
-    String dataVencimento() {
+    Date dataVencimento() {
         return dataVencimento;
     }
 
-    String dataPagamento() {
+    Date dataPagamento() {
         return dataPagamento;
     }
 

@@ -7,7 +7,22 @@ import java.sql.SQLException;
 public class CursoControl {
     PreparedStatement ps;
     ResultSet rs;
-   
+    float valorX;
+    int numParcelasX;
+    int aux;
+
+    public float getValorX() {
+        return valorX;
+    }
+
+    public int getNumParcelasX() {
+        return numParcelasX;
+    }
+
+    public int getAux() {
+        return aux;
+    }
+            
     
     private String cadastrar = "INSERT INTO Curso (CursoCodigo,Descricao,valor,numParcelas) Values (?,?,?,?)";
     
@@ -68,4 +83,29 @@ public class CursoControl {
             System.out.println("Erro ao consultar dados " + sql);
         }     
       }
+    public void calculoMensalidade(Conexao conn, Curso cr) throws SQLException{
+        
+        String consult = "SELECT * from Curso where CursoCodigo = ?;";   
+        
+        try{
+            ps = (PreparedStatement) conn.conectar().prepareStatement(consult);
+            ps.setInt(1, cr.cursoCodigo());
+            rs = ps.executeQuery(); 
+            
+            while (rs.next()){
+                
+                System.out.println("Valor" + rs.getFloat("valor")+
+                        "\n" + "NumParcelas" + rs.getInt("numParcelas"));
+                this.valorX = rs.getFloat("valor");
+                this.numParcelasX = rs.getInt("numParcelas");
+                this.aux = (int) (valorX / numParcelasX);
+                System.out.println("Valor das Parcelas" + aux);
+                
+                
+                
+            }
+        } catch (SQLException sql) {
+            System.out.println("Erro ao consultar dados " + sql);
+        }
+    }
 }

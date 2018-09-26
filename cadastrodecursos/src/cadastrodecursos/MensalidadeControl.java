@@ -17,8 +17,8 @@ public class MensalidadeControl {
            ps = (PreparedStatement)conn.conectar().prepareStatement(cadastrar);
            ps.setInt(1, ms.numParcelas());
            ps.setFloat(2, ms.valor());
-           ps.setString(3, ms.dataVencimento());
-           ps.setString(4, ms.dataPagamento());
+           ps.setDate(3, ms.dataVencimento());
+           ps.setDate(4, ms.dataPagamento());
                       
            ps.executeUpdate();
            
@@ -33,8 +33,8 @@ public class MensalidadeControl {
        String alterar = "UPDATE Mensalidade set valor = ? ,dataVencimento = ? , dataPagamento = ?  where numParcelas = ?";
       try{  ps = (PreparedStatement)conn.conectar().prepareStatement(alterar);
            ps.setFloat(1, ms.valor());
-           ps.setString(2, ms.dataVencimento());
-           ps.setString(3, ms.dataPagamento());
+           ps.setDate(2, ms.dataVencimento());
+           ps.setDate(3, ms.dataPagamento());
            ps.setInt(4 ,ms.numParcelas());
            
            
@@ -50,18 +50,21 @@ public class MensalidadeControl {
     
     public void consultar (Conexao conn , Mensalidade ms){
       
-      String consultar = "SELECT * from Mensalidade where numParcelas = ?;";
+      String consultar = "SELECT * from Mensalidade where Mat = ?;";
 
         try {
             ps = (PreparedStatement) conn.conectar().prepareStatement(consultar);
-            ps.setInt(1, ms.numParcelas());
+            ps.setInt(1, ms.getIdMat());
             rs = ps.executeQuery();
             
             while (rs.next()){
             
-                System.out.println("Código do Curso : " + rs.getInt("numParcelas")+ "\n" +"Valor : "+ rs.getInt(
-                        "dataVencimento")+"\n" + "Valor : " + rs.getString("valor") + "\n" + "dataPagamento : " + rs.getString("numParcelas")
-                        + "\n");
+                System.out.println("Código da matricula" + rs.getInt("Mat")+
+                        "\n" + "Código do Curso : " + rs.getInt("CurCodigo")+
+                        "\n" + "Valor : "+ rs.getFloat("Valor")+
+                        "\n" + "NumParcela : " + rs.getString("NumParcela")+
+                        "\n" + "dataPagamento : " + rs.getDate("DataPagamento")+
+                        "\n" + "dataVencimento : " + rs.getDate("DataVencimento"));
             
             }           
         } catch (SQLException sql) {
